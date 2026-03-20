@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Service Developer Portfolio | Azure & AI Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4 px-6 glass-effect border-b border-white/10 text-white" id="main-nav">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter">AI.ARCHITECT</a>
+            <div class="hidden md:flex space-x-10 text-sm font-medium">
+                <a href="#hero" class="hover:text-blue-400 transition">홈</a>
+                <a href="#about" class="hover:text-blue-400 transition">전문 역량</a>
+                <a href="#projects" class="hover:text-blue-400 transition">프로젝트</a>
+                <a href="#experience" class="hover:text-blue-400 transition">경력</a>
+                <a href="#contact" class="hover:text-blue-400 transition">연락처</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 gradient-bg text-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse-soft"></div>
+        <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] animate-pulse-soft"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 relative z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    <span>Azure Cloud & AI Specialist</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    클라우드 위에서 <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">지능형 서비스</span>를 <br>
+                    설계합니다.
+                </h1>
+                <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
+                    Azure 클라우드 생태계를 기반으로 대규모 B2C 사용자를 위한 실시간 AI 서비스를 구축합니다. 복잡한 데이터를 사용자 가치로 변환하는 'End-to-End' AI 유저 서비스를 지향합니다.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold transition flex items-center space-x-2 shadow-lg shadow-blue-900/40">
+                        <span>프로젝트 살펴보기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 glass-effect hover:bg-white/10 rounded-xl font-bold transition border border-white/20">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center">
+                <div class="relative w-full max-w-md aspect-square">
+                    <!-- Placeholder for interactive visual/image -->
+                    <div class="absolute inset-0 border-2 border-dashed border-blue-400/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute inset-8 border border-blue-400/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="p-8 glass-effect rounded-3xl shadow-2xl border border-white/10 relative overflow-hidden group">
+                            <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 blur-3xl group-hover:bg-blue-500/40 transition duration-700"></div>
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                </div>
+                                <div class="font-mono text-sm text-blue-300">
+                                    <p class="mb-1">> Azure.Deploy(AI_Service)</p>
+                                    <p class="mb-1 text-slate-400">> Infrastructure: Cloud Native</p>
+                                    <p class="mb-1 text-slate-400">> User Base: 1M+ Active</p>
+                                    <p class="text-green-400">> Status: Optimized</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- Core Expertise Section -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">EXPERTISE</h2>
+                <p class="text-4xl font-bold text-slate-900">전문 역량 및 기술 스택</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="p-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 reveal">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                        <i data-lucide="cloud" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Azure Cloud Native</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        App Service, Azure Functions, CosmosDB 등 Azure의 클러스터와 서버리스 환경을 활용하여 고가용성 아키텍처를 설계합니다.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-blue-500"></i> Infrastructure as Code (Terraform)</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-blue-500"></i> Azure DevOps & CI/CD</li>
+                    </ul>
+                </div>
+                <!-- Skill 2 -->
+                <div class="p-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 reveal" style="transition-delay: 0.2s">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                        <i data-lucide="brain" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI Service Integration</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Azure OpenAI(GPT-4), Cognitive Services를 B2C 제품에 통합하여 사용자에게 실질적인 편의를 제공하는 지능형 모듈을 개발합니다.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-purple-500"></i> LLM Application (RAG)</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-purple-500"></i> Vector Search Integration</li>
+                    </ul>
+                </div>
+                <!-- Skill 3 -->
+                <div class="p-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 reveal" style="transition-delay: 0.4s">
+                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">B2C Product Focus</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        단순 기술 구현을 넘어, 유저 리텐션과 UX를 고려한 AI 인터랙션을 설계합니다. 데이터 기반의 성과 분석 및 서비스 고도화에 능숙합니다.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-slate-500">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-500"></i> User-Centric Design Logic</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-500"></i> Personalized AI Experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+                <div>
+                    <h2 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">PORTFOLIO</h2>
+                    <p class="text-4xl font-bold text-slate-900">혁신을 구현한 결과물들</p>
+                </div>
+                <div class="mt-4 md:mt-0 space-x-2">
+                    <span class="px-4 py-2 bg-blue-600 text-white rounded-full text-xs font-bold shadow-md">전체</span>
+                    <span class="px-4 py-2 bg-white text-slate-500 rounded-full text-xs font-bold border border-slate-200 hover:bg-slate-50 transition cursor-pointer">B2C</span>
+                    <span class="px-4 py-2 bg-white text-slate-500 rounded-full text-xs font-bold border border-slate-200 hover:bg-slate-50 transition cursor-pointer">Azure AI</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/60 reveal cursor-pointer" onclick="openProjectModal('p1')">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" alt="AI Agent Project" class="project-image w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                            <span class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg uppercase tracking-wider">AI B2C Service</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">개인 맞춤형 AI 라이프 가이드 "Luna"</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            Azure OpenAI GPT-4 모델을 활용하여 사용자의 매일의 루틴과 취향을 학습하고, 최적화된 생활 패턴을 제안하는 지능형 에이전트 서비스.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">Azure Functions</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">CosmosDB</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">React Native</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/60 reveal cursor-pointer" style="transition-delay: 0.2s" onclick="openProjectModal('p2')">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbda64626744?auto=format&fit=crop&q=80&w=1000" alt="AI Vision Project" class="project-image w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                            <span class="px-3 py-1 bg-purple-600 text-white text-[10px] font-bold rounded-lg uppercase tracking-wider">Cloud Data & AI</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">실시간 AI 쇼핑 비주얼 분석 엔진</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            Azure Cognitive Services 기반의 이미지 분석 엔진을 구축하여, 유저가 촬영한 사진 속 상품을 즉시 찾아주고 유사 스타일을 추천하는 B2C 커머스 기능 개발.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">Computer Vision</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">App Service</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg font-medium">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">JOURNEY</h2>
+                <p class="text-4xl font-bold text-slate-900">주요 경력 사항</p>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Exp 1 -->
+                <div class="relative pl-10 border-l-2 border-slate-200 reveal">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm shadow-blue-500"></div>
+                    <div class="mb-2">
+                        <span class="text-sm font-bold text-blue-600">2022.03 - 현재</span>
+                        <h3 class="text-xl font-bold mt-1">AI Service Lead @ (주)혁신테크</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        - Azure 기반의 생성형 AI 챗봇 서비스 아키텍처 설계 및 배포 리딩 (MAU 10만 달성)<br>
+                        - LangChain과 Azure Search를 결합한 RAG 시스템 구축으로 답변 정확도 45% 향상<br>
+                        - B2C 서비스 지표 분석을 통한 개인화 추천 로직 개선
+                    </p>
+                </div>
+                <!-- Exp 2 -->
+                <div class="relative pl-10 border-l-2 border-slate-200 reveal" style="transition-delay: 0.2s">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                    <div class="mb-2">
+                        <span class="text-sm font-bold text-slate-500">2020.01 - 2022.02</span>
+                        <h3 class="text-xl font-bold mt-1">Cloud Backend Developer @ 미래소프트</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        - Azure 클라우드 환경으로의 레거시 시스템 마이그레이션 프로젝트 참여<br>
+                        - 대규모 사용자 트래픽 분산을 위한 Traffic Manager 및 Load Balancer 최적화<br>
+                        - 서버리스(Azure Functions) 기반의 실시간 알림 시스템 개발
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 reveal">새로운 도전을 함께할 준비가 되었습니다.</h2>
+            <p class="text-slate-300 mb-12 reveal" style="transition-delay: 0.1s">
+                Azure 클라우드와 AI 기술로 혁신적인 B2C 사용자 서비스를 만들고 싶다면 연락 주세요.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12 reveal" style="transition-delay: 0.2s">
+                <div class="p-6 glass-effect rounded-2xl">
+                    <i data-lucide="mail" class="w-6 h-6 mx-auto mb-4 text-blue-400"></i>
+                    <p class="text-xs text-slate-400 mb-1 uppercase font-bold">Email</p>
+                    <p class="text-sm font-medium">contact@ai-architect.dev</p>
+                </div>
+                <div class="p-6 glass-effect rounded-2xl">
+                    <i data-lucide="github" class="w-6 h-6 mx-auto mb-4 text-blue-400"></i>
+                    <p class="text-xs text-slate-400 mb-1 uppercase font-bold">GitHub</p>
+                    <p class="text-sm font-medium">github.com/ai-cloud-dev</p>
+                </div>
+                <div class="p-6 glass-effect rounded-2xl">
+                    <i data-lucide="linkedin" class="w-6 h-6 mx-auto mb-4 text-blue-400"></i>
+                    <p class="text-xs text-slate-400 mb-1 uppercase font-bold">LinkedIn</p>
+                    <p class="text-sm font-medium">linkedin.com/in/ai-service</p>
+                </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.3s">
+                <a href="mailto:contact@ai-architect.dev" class="inline-block px-12 py-5 bg-white text-blue-900 rounded-2xl font-bold text-lg hover:bg-blue-50 transition shadow-xl shadow-blue-900/50">
+                    프로젝트 제안하기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-slate-400 text-xs border-t border-slate-200">
+        <p>&copy; 2024 AI Architect Portfolio. Powered by Azure Cloud.</p>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="modal-container" class="fixed inset-0 z-[100] hidden items-center justify-center p-6">
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-3xl max-h-[90vh] rounded-[2.5rem] overflow-y-auto shadow-2xl transition-all scale-95 opacity-0 duration-300" id="modal-content">
+            <button class="absolute top-6 right-6 p-3 bg-slate-100 hover:bg-slate-200 rounded-full transition z-10" onclick="closeModal()">
+                <i data-lucide="x" class="w-5 h-5 text-slate-600"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lucide 아이콘 초기화
+        lucide.createIcons();
+
+        // 스크롤 시 네비게이션 효과
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-slate-900/90', 'py-3');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('bg-slate-900/90', 'py-3');
+                nav.classList.add('py-4');
+            }
+            reveal();
+        });
+
+        // 스크롤 등장 애니메이션 (Reveal)
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.onload = reveal;
+
+        // 모달 데이터
+        const projectData = {
+            p1: {
+                title: "Luna: 개인 맞춤형 AI 라이프 가이드",
+                category: "AI B2C Service",
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+                description: "이 프로젝트는 사용자의 생활 패턴을 학습하여 최적의 제안을 해주는 B2C 모바일 서비스입니다. Azure OpenAI의 GPT-4 모델을 핵심 엔진으로 사용하며, 사용자의 이전 대화 맥락과 취향을 CosmosDB에 저장하여 장기 기억을 구현했습니다.",
+                results: [
+                    "출시 3개월 만에 사용자 수 5만 명 돌파",
+                    "Azure Functions를 활용한 서버리스 아키텍처로 운영 비용 40% 절감",
+                    "RAG 패턴 도입을 통한 정보 신뢰성 강화"
+                ],
+                tech: ["Azure OpenAI", "CosmosDB", "Azure Functions", "React Native", "Vector Search"]
+            },
+            p2: {
+                title: "실시간 AI 쇼핑 비주얼 분석 엔진",
+                category: "Cloud Data & AI",
+                image: "https://images.unsplash.com/photo-1551288049-bbda64626744?auto=format&fit=crop&q=80&w=1000",
+                description: "사용자가 사진을 찍으면 이미지 속 상품의 카테고리, 스타일, 브랜드를 자동 분석하여 검색 결과로 매칭해주는 AI 엔진입니다. Azure Cognitive Services의 Computer Vision API를 커스텀 학습하여 정확도를 높였습니다.",
+                results: [
+                    "평균 분석 속도 1.2초 미만 달성",
+                    "이미지 기반 검색 전환율 15% 상승",
+                    "Azure App Service를 통한 안정적인 글로벌 트래픽 처리"
+                ],
+                tech: ["Azure Computer Vision", "Python", "FastAPI", "App Service", "Azure SQL"]
+            }
+        };
+
+        // 모달 열기 함수
+        function openProjectModal(id) {
+            const data = projectData[id];
+            const modalBody = document.getElementById('modal-body');
+            const container = document.getElementById('modal-container');
+            const content = document.getElementById('modal-content');
+
+            modalBody.innerHTML = `
+                <div class="relative h-64 sm:h-80 overflow-hidden">
+                    <img src="${data.image}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
+                </div>
+                <div class="p-8 sm:p-12 -mt-20 relative z-10">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">${data.category}</span>
+                    <h3 class="text-3xl sm:text-4xl font-bold mt-2 mb-6">${data.title}</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="md:col-span-2">
+                            <h4 class="font-bold text-slate-900 mb-2">프로젝트 개요</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">${data.description}</p>
+                            
+                            <h4 class="font-bold text-slate-900 mb-3">주요 성과</h4>
+                            <ul class="space-y-2 mb-6">
+                                ${data.results.map(r => `<li class="flex items-start text-sm text-slate-600"><i data-lucide="award" class="w-4 h-4 mr-2 text-yellow-500 flex-shrink-0 mt-0.5"></i> ${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-4">사용 기술</h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${data.tech.map(t => `<span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] rounded-full font-bold uppercase">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-6 border-t border-slate-100">
+                        <button class="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-500 transition">GitHub 보기</button>
+                        <button class="px-6 py-3 bg-slate-100 text-slate-600 rounded-xl font-bold text-sm hover:bg-slate-200 transition">라이브 데모</button>
+                    </div>
+                </div>
+            `;
+            
+            container.classList.remove('hidden');
+            container.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            lucide.createIcons();
+        }
+
+        // 모달 닫기 함수
+        function closeModal() {
+            const container = document.getElementById('modal-container');
+            const content = document.getElementById('modal-content');
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                container.classList.add('hidden');
+                container.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // 모바일 메뉴 버튼 (기능 추가용 자리)
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            alert('모바일 메뉴 기능은 현재 준비 중입니다. 섹션 이동을 사용해 주세요!');
+        });
+    </script>
+</body>
+</html>
